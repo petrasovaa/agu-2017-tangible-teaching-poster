@@ -8,10 +8,13 @@
 \graphicspath{./images/}
 
 \title{Learning topography with Tangible Landscape games}
-\institute{$^1$North Carolina State University, Raleigh, NC, USA (\texttt{akratoc@ncsu.edu}),
-$^2$Louisiana State University, Baton Rouge, LA, USA}
-\author{Anna Petrasova$^1$, Payam Tabrizian$^1$, Brendan A. Harmon$^2$,\\ Vaclav Petras$^1$,
-Garrett Millar$^1$, Helena Mitasova$^1$ and Ross K. Meentemeyer$^1$}
+\institute{$^1$Center for Geospatial Analytics, North Carolina State University (NCSU), Raleigh, NC, USA,
+$^2$Landscape Architecture, Louisiana State University,\\ Baton Rouge, LA, USA,
+$^3$Marine, Earth, and Atmospheric Sciences, NCSU,
+$^4$Department of Forestry and Environmental Resources, NCSU
+}
+\author{Anna Petrasova$^1$, Payam Tabrizian$^1$, Garrett Millar$^1$, \\ Brendan A. Harmon$^2$, Vaclav Petras$^1$,
+ Helena Mitasova$^{1,3}$ and Ross K. Meentemeyer$^{1,4}$}
 % \titlegraphic{\includegraphics{./images/logos/ncstate-type-2x2-red-rgb.eps}}
 
 \usetheme{Rays} % See Section 5
@@ -71,12 +74,13 @@ Garrett Millar$^1$, Helena Mitasova$^1$ and Ross K. Meentemeyer$^1$}
 
 \makeatletter
 \renewcommand\TP@maketitle{%
-    \begin{minipage}{0.15\linewidth}
-       \centering
-       \includegraphics[width=0.8\textwidth]{./images/cgaNCSU}
+    \begin{minipage}{0.2\linewidth}
+%        \centering
+\rule{1.5em}{0pt}
+       \raisebox{4em}{\includegraphics[width=1\textwidth]{./images/ncsu-cnr.pdf}}
     \end{minipage}%
     \hfill
-   \begin{minipage}{0.7\linewidth}
+   \begin{minipage}{0.6\linewidth}
         \centering
         \color{titlefgcolor}
         {\bfseries  \sc {\fontsize{95}{60}\selectfont \@title}  \par}
@@ -86,10 +90,11 @@ Garrett Millar$^1$, Helena Mitasova$^1$ and Ross K. Meentemeyer$^1$}
         {\LARGE \@institute}
     \end{minipage}%
     \hfill
-    \begin{minipage}{0.15\linewidth}
-      \centering
+    \begin{minipage}{0.19\linewidth}
+     
 %        \includegraphics[width=0.37\textwidth]{grass_logo.pdf}\\
-      \includegraphics[width=0.65\textwidth]{./images/tl_logo.pdf}\\
+      \raisebox{3em}{\includegraphics[width=0.96\textwidth]{./images/cga.pdf}}
+      \hfill
 %       \Large {\textsf{GRASS GIS}}
    \end{minipage}
 %     \begin{minipage}{0.2\linewidth}
@@ -110,7 +115,7 @@ Garrett Millar$^1$, Helena Mitasova$^1$ and Ross K. Meentemeyer$^1$}
 \setlength{\parskip}{1cm}
 
 \begin{document}
-\maketitle[width=0.8\textwidth,roundedcorners=30pt] % See Section 4.1
+\maketitle[width=0.98\textwidth,roundedcorners=30pt] % See Section 4.1
 
 
 \begin{columns} % See Section 4.4
@@ -129,7 +134,7 @@ We developed and tested a new method for teaching hydrology, geomorphology,
 and grading using Tangible Landscape\,---\,a tangible interface for geospatial modeling.
 Tangible Landscape couples a physical and digital model of a landscape through
 a real-time cycle of hands-on modeling, 3D scanning, geospatial computation,
-and projection.
+and projection [1].
 With Tangible Landscape students can: %sculpt a projection-augmented
 % topographic model of a landscape with their hands and use a variety of tangible objects
 % to immediately see how they are changing geospatial analytics such as contours, profiles,
@@ -144,14 +149,23 @@ With Tangible Landscape students can: %sculpt a projection-augmented
 \end{itemize}
 
 \begin{center}
-\includegraphics[width=0.865\linewidth]{./images/TL_Setup}
+\includegraphics[width=0.83\linewidth]{./images/TL_Setup}
 \end{center}
 
-Tangible Landscape powered by GRASS GIS,
+Tangible Landscape powered by GRASS GIS [2],
 an open source platform with extensive libraries for geospatial modeling,
 can be flexibly programmed to accommodate simple to complex
 geospatial applications and simulations, thus providing a
 broader range of teaching opportunities than preceding geospatial tangible user interfaces (TUI).
+% Tangible Landscape is powered by GRASS GIS, an open source geospatial platform with extensive libraries
+% for geospatial modeling and analysis. As such, Tangible Landscape can be used to design a wide range
+% of learning experiences across a large number of geoscience disciplines.
+
+% Understanding topography and its representations is crucial for correct interpretation and modeling of surface processes. However, novice earth science and landscape architecture students often find reading topographic maps challenging. As a result, many students struggle to comprehend more complex spatial concepts and processes such as flow accumulation or sediment transport.
+% 
+% As part of a graduate level course that teaches grading, 16 students participated in a series of workshops, which were developed as serious games to encourage learning through structured play. These serious games included 1) diverting rain water to a specified location with minimal changes to landscape, 2) building different combinations of landforms, and 3) reconstructing landscapes based on projected contour information with feedback.
+% In this poster, we will introduce Tangible Landscape, and describe the games and their implementation. We will then present preliminary results of a user experience survey we conducted as part of the workshops. All developed materials and software are open source and available online.
+
 
 }
 
@@ -163,7 +177,9 @@ broader range of teaching opportunities than preceding geospatial tangible user 
 {
 
 \LARGE
-Students of a graduate level course on grading  participated in a series of workshops,
+Landscape architecture students taking a graduate level
+Landform and Grading course
+participated in a series of workshops,
 which were developed as serious games to encourage learning through structured play.
 The games focused on hydrology, geomorphology, and grading concepts.
 
@@ -175,13 +191,13 @@ The games focused on hydrology, geomorphology, and grading concepts.
 %width,linewidth,roundedcorners
 %
 % \rule{0em}{1em}
-\vspace{2em}
+\vspace{2.1em}
 \coloredbox[bgcolor=gr1,framecolor=gr1,roundedcorners=15]{
 \textbf{Water flow task:}
 Find the highest source point from which water will
 flow into the target point in the landscape.
 Mark the location of the source
-point location by inserting a wooden pin into the model.
+point by inserting a wooden pin into the model.
 }
 
 
@@ -200,7 +216,7 @@ to shape the topography.
 
 \coloredbox[bgcolor=gr1,framecolor=gr1,roundedcorners=15]{
 \textbf{Ponding task:}
-With the given amount of sand and the existing topography build
+With the given amount of sand and the existing topography, build
 a damn on a stream to impound maximum volume of water.
 Use your hands or sculpting knife to make dams in the landscape.
 }
@@ -209,7 +225,7 @@ Use your hands or sculpting knife to make dams in the landscape.
 
 \coloredbox[bgcolor=gr1,framecolor=gr1,roundedcorners=15]{
 \textbf{Landform task:}
-With your hands sculpt combinations of specified landforms (depressions, ridges, valleys, peaks)
+With your hands, sculpt combinations of specified landforms (depressions, ridges, valleys, peaks)
 and identify them. The combinations get increasingly difficult.
 }
 
@@ -234,19 +250,19 @@ The indicator shows the total elevation
 difference between the scanned model and the expected topography.
 }
 
-% \vspace{1em}
+ \vspace{0.1em}
 \end{minipage}
 \hfill
 \begin{minipage}{0.53\linewidth}
-\includegraphics[width=1\linewidth]{./images/games}
+\includegraphics[width=1\linewidth]{./images/games.pdf}
 \end{minipage}
 \end{minipage}
 
 \vspace{2.1em}
 
-The geospatial analyses displayed as feedback are implemented in the following GRASS GIS modules:
-r.drain (flow routing), r.sim.water (flow simulation), r.fill.dir (elevation depressions),
-r.geomorphon (landforms), r.mapcalc (elevation difference).
+% The geospatial analyses displayed as feedback are implemented in the following GRASS GIS modules:
+% r.drain (flow routing), r.sim.water (flow simulation), r.fill.dir (elevation depressions),
+% r.geomorphon (landforms), r.mapcalc (elevation difference).
 
 
 % \raisebox{0pt}[0pt][0pt]{\hspace{-3cm}\colorbox{white}{\includegraphics[width=3cm]{images/qrcodes/youtube1}}}%
@@ -271,7 +287,7 @@ r.geomorphon (landforms), r.mapcalc (elevation difference).
 \item[Assessment]~\\%We assessed the effectiveness of Tangible Landscape as a teaching tool through: 
 \vspace{-1.5em}
 \begin{itemize}[leftmargin=1.5cm]
- \item[\textbullet{} ] Usability and user experience (UX) survey designed and validated for geospatial TUIs,
+ \item[\textbullet{} ] Usability and user experience (UX) survey designed and validated for geospatial TUIs
  
  \item[\textbullet{} ] Three assessments administered before and after workshops to assess acquisition
  and transfer of spatial skills: topographic map assessment (TMA) and  two assessments specific to landforms and cut \& fill tasks
@@ -297,8 +313,8 @@ improved UX and marginal, task-specific knowledge building.
  \item[\textbullet{} ] The objects' physicality enabled
 participants to effectively interact with the system,
 positively impacting ratings of the system's usability and UX.
-\item[\textbullet{} ] No significant response accuracy differences for TMA nor landform assessment,
-potentially due to mismatched psychometric properties of examining tangible (3D)
+\item[\textbullet{} ] No significant response accuracy differences found for TMA nor landform assessment,
+potentially due to mismatched psychometric properties of tangible (3D)
 teaching methods with 2D assessments of learning outcomes.
  \item[\textbullet{} ] Students scored significantly better on the cut and fill assessment after workshop, in comparison to before.
 \end{itemize}
@@ -318,13 +334,13 @@ teaching methods with 2D assessments of learning outcomes.
 \begin{description}
 \item[Tangible Landscape ] \url{github.com/tangible-landscape}
 \item[User survey and TMA ] \url{osf.io/b6njq}
- \item[NCSU GeoForAll Lab ] \url{geospatial.ncsu.edu/osgeorel}
+%  \item[NCSU GeoForAll Lab ] \url{geospatial.ncsu.edu/osgeorel}
  
 \end{description}
 
 }
 
-\block[titleleft]{\blocktitlesize References \& Acknowledgement}{
+\block[titleleft]{\blocktitlesize References \& Acknowledgements}{
 \fontsize{27}{37.} \selectfont
 \begin{enumerate}[label={[\arabic*]}]
  \item Petrasova, A., Harmon, B. A., Petras, V., Mitasova, H., 2015.
@@ -338,11 +354,11 @@ Environmental Modelling \& Software, 31(0), 124--130.
 
 \end{enumerate}
 
-\bigskip
+\vspace{1em}
 
 This research was partially supported through 
-\textbf{GAPS (Geospatial Analytics for Problem Solving) for Hi-Tech Teens} program funded by
-Burroughs Wellcome Fund
+\textbf{GAPS (Geospatial Applications for Problem Solving) for Hi-Tech Teens} program funded by
+Burroughs Wellcome Fund.
 }
 \end{columns}
 \end{document}
